@@ -1,0 +1,277 @@
+// Skills & Learning Stack Section
+.skills-section {
+  margin: 8rem 0;
+  padding: 4rem 0;
+  background: var(--bg);
+  position: relative;
+
+  @media (max-width: 992px) {
+    margin: 6rem 0;
+    padding: 3rem 0;
+  }
+
+  @media (max-width: 600px) {
+    margin: 4rem 0;
+    padding: 2rem 0;
+  }
+
+  .skills-content {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .skills-heading {
+      h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 1rem;
+        background: linear-gradient(120deg, var(--mainColor) 0%, var(--purple) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        display: inline-block;
+
+        @media (max-width: 600px) {
+          font-size: 2.2rem;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 5px;
+          background: linear-gradient(90deg, var(--mainColor), var(--purple));
+          border-radius: 3px;
+          box-shadow: 0 2px 15px rgba(52, 163, 163, 0.4);
+
+          @media (max-width: 600px) {
+            width: 70px;
+            height: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 600px) {
+      gap: 2rem;
+      padding: 0 1.5rem;
+    }
+  }
+
+  .skill-category {
+    background: linear-gradient(135deg, rgba(52, 163, 163, 0.08) 0%, rgba(138, 73, 255, 0.08) 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(52, 163, 163, 0.15) 0%, rgba(138, 73, 255, 0.15) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(52, 163, 163, 0.3);
+      box-shadow: 0 20px 60px rgba(52, 163, 163, 0.2);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .category-icon {
+        transform: scale(1.1) rotate(5deg);
+        background: linear-gradient(135deg, var(--mainColor), var(--purple));
+      }
+
+      h3 {
+        color: var(--mainColor);
+      }
+    }
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .category-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, rgba(52, 163, 163, 0.2), rgba(138, 73, 255, 0.2));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @media (max-width: 600px) {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1.2rem;
+      }
+
+      ion-icon {
+        width: 40px;
+        height: 40px;
+        color: var(--mainColor);
+        transition: color 0.3s ease;
+
+        @media (max-width: 600px) {
+          width: 35px;
+          height: 35px;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--white);
+      margin-bottom: 1.8rem;
+      text-align: center;
+      transition: color 0.3s ease;
+
+      @media (max-width: 600px) {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--whiteLight);
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        position: relative;
+        transition: all 0.2s ease;
+        font-weight: 300;
+
+        @media (max-width: 600px) {
+          font-size: 0.98rem;
+          margin-bottom: 0.9rem;
+          padding-left: 1.8rem;
+        }
+
+        &::before {
+          content: '◆';
+          position: absolute;
+          left: 0;
+          color: var(--mainColor);
+          font-size: 0.8em;
+          transition: all 0.2s ease;
+        }
+
+        &:hover {
+          color: var(--white);
+          transform: translateX(5px);
+
+          &::before {
+            color: var(--purple);
+            transform: scale(1.3);
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Specific styling for each category
+  .skill-category:nth-child(1) {
+    .category-icon ion-icon {
+      color: var(--mainColor);
+    }
+
+    &:hover .category-icon ion-icon {
+      color: var(--white);
+    }
+  }
+
+  .skill-category:nth-child(2) {
+    .category-icon {
+      background: linear-gradient(135deg, rgba(138, 73, 255, 0.2), rgba(251, 131, 158, 0.2));
+    }
+
+    .category-icon ion-icon {
+      color: var(--purple);
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(138, 73, 255, 0.2);
+
+      .category-icon {
+        background: linear-gradient(135deg, var(--purple), var(--pink));
+      }
+
+      .category-icon ion-icon {
+        color: var(--white);
+      }
+    }
+  }
+
+  .skill-category:nth-child(3) {
+    .category-icon {
+      background: linear-gradient(135deg, rgba(6, 215, 156, 0.2), rgba(52, 163, 163, 0.2));
+    }
+
+    .category-icon ion-icon {
+      color: var(--green-alt);
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(6, 215, 156, 0.2);
+
+      .category-icon {
+        background: linear-gradient(135deg, var(--green-alt), var(--mainColor));
+      }
+
+      .category-icon ion-icon {
+        color: var(--white);
+      }
+    }
+  }
+}

@@ -1,0 +1,385 @@
+// Projects / Work Experience Section
+.projects-experience {
+  max-width: 1480px;
+  margin: 8rem auto;
+  padding: 4rem 6rem;
+  background: var(--bg);
+
+  @media (max-width: 992px) {
+    padding: 3rem 2rem;
+    margin: 6rem auto;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.5rem;
+    margin: 4rem auto;
+  }
+
+  .projects-header {
+    text-align: center;
+    margin-bottom: 5rem;
+
+    @media (max-width: 600px) {
+      margin-bottom: 3rem;
+    }
+
+    h5 {
+      text-transform: uppercase;
+      color: var(--whiteLight);
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(120deg, var(--mainColor) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+
+      @media (max-width: 600px) {
+        font-size: 2.2rem;
+      }
+    }
+
+    .projects-subtitle {
+      font-size: 1.1rem;
+      color: var(--whiteLight);
+      font-weight: 300;
+      margin-top: 0.5rem;
+
+      @media (max-width: 600px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 600px) {
+      gap: 2rem;
+    }
+  }
+
+  .project-card {
+    background: linear-gradient(135deg, rgba(52, 163, 163, 0.05) 0%, rgba(138, 73, 255, 0.05) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 600px) {
+      padding: 2rem 1.5rem;
+      border-radius: 16px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(52, 163, 163, 0.1) 0%, rgba(138, 73, 255, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 0;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(52, 163, 163, 0.3);
+      box-shadow: 0 20px 60px rgba(52, 163, 163, 0.2);
+
+      &::before {
+        opacity: 1;
+      }
+
+      .project-icon {
+        transform: scale(1.1) rotate(5deg);
+        background: linear-gradient(135deg, var(--mainColor), var(--purple));
+
+        ion-icon {
+          color: var(--white);
+        }
+      }
+
+      h3 {
+        color: var(--mainColor);
+      }
+    }
+
+    * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(52, 163, 163, 0.2), rgba(138, 73, 255, 0.2));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @media (max-width: 600px) {
+        width: 50px;
+        height: 50px;
+      }
+
+      ion-icon {
+        width: 32px;
+        height: 32px;
+        color: var(--mainColor);
+        transition: color 0.3s ease;
+
+        @media (max-width: 600px) {
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+
+    .project-status {
+      .status-badge {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        @media (max-width: 600px) {
+          padding: 0.35rem 0.85rem;
+          font-size: 0.7rem;
+        }
+
+        &.concept {
+          background: rgba(52, 163, 163, 0.2);
+          color: var(--mainColor);
+          border: 1px solid rgba(52, 163, 163, 0.3);
+        }
+
+        &.personal {
+          background: rgba(138, 73, 255, 0.2);
+          color: var(--purple);
+          border: 1px solid rgba(138, 73, 255, 0.3);
+        }
+
+        &.research {
+          background: rgba(6, 215, 156, 0.2);
+          color: var(--green-alt);
+          border: 1px solid rgba(6, 215, 156, 0.3);
+        }
+
+        &.learning {
+          background: rgba(251, 131, 158, 0.2);
+          color: var(--pink);
+          border: 1px solid rgba(251, 131, 158, 0.3);
+        }
+      }
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+
+      @media (max-width: 600px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      color: var(--whiteLight);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      opacity: 0.8;
+
+      @media (max-width: 600px) {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .project-description {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--whiteLight);
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+
+      @media (max-width: 600px) {
+        font-size: 0.98rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .project-focus {
+      margin-bottom: 1.5rem;
+
+      h5 {
+        font-size: 0.9rem;
+        color: var(--mainColor);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 0.8rem;
+
+        @media (max-width: 600px) {
+          font-size: 0.85rem;
+        }
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem 1rem;
+
+        @media (max-width: 600px) {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+
+        li {
+          font-size: 0.95rem;
+          color: var(--whiteLight);
+          padding-left: 1.5rem;
+          position: relative;
+          line-height: 1.5;
+          font-weight: 300;
+          transition: all 0.2s ease;
+
+          @media (max-width: 600px) {
+            font-size: 0.9rem;
+          }
+
+          &::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--mainColor);
+            font-weight: bold;
+            transition: all 0.2s ease;
+          }
+
+          &:hover {
+            color: var(--white);
+            transform: translateX(3px);
+
+            &::before {
+              color: var(--purple);
+            }
+          }
+        }
+      }
+    }
+
+    .project-note {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--whiteLight);
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 0.5rem;
+
+      @media (max-width: 600px) {
+        font-size: 0.9rem;
+        padding-top: 1rem;
+      }
+
+      strong {
+        color: var(--white);
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Specific card variations
+  .project-card:nth-child(1) {
+    .project-icon {
+      background: linear-gradient(135deg, rgba(52, 163, 163, 0.2), rgba(52, 163, 163, 0.1));
+
+      ion-icon {
+        color: var(--mainColor);
+      }
+    }
+  }
+
+  .project-card:nth-child(2) {
+    .project-icon {
+      background: linear-gradient(135deg, rgba(138, 73, 255, 0.2), rgba(138, 73, 255, 0.1));
+
+      ion-icon {
+        color: var(--purple);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(138, 73, 255, 0.2);
+    }
+  }
+
+  .project-card:nth-child(3) {
+    .project-icon {
+      background: linear-gradient(135deg, rgba(6, 215, 156, 0.2), rgba(6, 215, 156, 0.1));
+
+      ion-icon {
+        color: var(--green-alt);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(6, 215, 156, 0.2);
+    }
+  }
+
+  .project-card:nth-child(4) {
+    .project-icon {
+      background: linear-gradient(135deg, rgba(251, 131, 158, 0.2), rgba(251, 131, 158, 0.1));
+
+      ion-icon {
+        color: var(--pink);
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 20px 60px rgba(251, 131, 158, 0.2);
+    }
+  }
+}

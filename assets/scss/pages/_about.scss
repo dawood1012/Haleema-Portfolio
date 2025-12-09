@@ -1,0 +1,349 @@
+// About & Mindset Section - Side by Side Layout
+.about-mindset {
+  margin: 8rem auto 10rem;
+  max-width: 1480px;
+  padding: 4rem 6rem;
+  position: relative;
+
+  @media (max-width: 992px) {
+    padding: 3rem 2rem;
+    margin: 6rem auto 8rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.5rem;
+    margin: 4rem auto 6rem;
+  }
+}
+
+.about-mindset-container {
+  display: flex;
+  gap: 5rem;
+  align-items: flex-start;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  @media (max-width: 600px) {
+    gap: 3rem;
+  }
+}
+
+// Left Column - About Me
+.about-content {
+  flex: 1;
+  padding-right: 2rem;
+
+  @media (max-width: 992px) {
+    padding-right: 0;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 600px) {
+      font-size: 2.2rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 80px;
+      height: 5px;
+      background: linear-gradient(90deg, var(--mainColor), var(--purple));
+      border-radius: 3px;
+      box-shadow: 0 2px 10px rgba(52, 163, 163, 0.3);
+
+      @media (max-width: 600px) {
+        width: 60px;
+        height: 4px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--whiteLight);
+    margin-top: 2.5rem;
+    font-weight: 300;
+
+    @media (max-width: 600px) {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 2rem;
+    }
+
+    strong {
+      color: var(--mainColor);
+      font-weight: 700;
+      font-size: 1.1em;
+      letter-spacing: 0.3px;
+    }
+
+    em {
+      font-style: italic;
+      color: var(--white);
+      font-weight: 400;
+      display: block;
+      margin-top: 1rem;
+      padding: 1.2rem;
+      background: rgba(52, 163, 163, 0.08);
+      border-left: 3px solid var(--mainColor);
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+}
+
+// Right Column - Mindset & Values
+.mindset-content {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(52, 163, 163, 0.05) 0%, rgba(138, 73, 255, 0.05) 100%);
+  border-radius: 16px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  @media (max-width: 600px) {
+    padding: 2rem 1.5rem;
+  }
+
+  &:hover {
+    border-color: rgba(52, 163, 163, 0.3);
+    box-shadow: 0 12px 40px rgba(52, 163, 163, 0.15);
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg, var(--mainColor) 0%, var(--purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 600px) {
+      font-size: 2rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--purple), var(--pink));
+      border-radius: 2px;
+      box-shadow: 0 2px 8px rgba(138, 73, 255, 0.4);
+
+      @media (max-width: 600px) {
+        width: 55px;
+        height: 3px;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    color: var(--white);
+    margin: 2rem 0 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+
+    @media (max-width: 600px) {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 1rem;
+    }
+  }
+
+  .mindset-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+
+    li {
+      font-size: 1.08rem;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      line-height: 1.7;
+      color: var(--whiteLight);
+      font-weight: 300;
+      transition: all 0.2s ease;
+
+      @media (max-width: 600px) {
+        font-size: 0.98rem;
+        padding-left: 1.7rem;
+      }
+
+      &:hover {
+        color: var(--white);
+        transform: translateX(3px);
+      }
+
+      &::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--mainColor);
+        font-weight: bold;
+        font-size: 1.2em;
+        transition: all 0.2s ease;
+      }
+
+      &:hover::before {
+        color: var(--purple);
+        transform: translateX(2px);
+      }
+
+      strong {
+        color: var(--mainColor);
+        font-weight: 700;
+        font-size: 1.05em;
+        letter-spacing: 0.3px;
+      }
+    }
+  }
+
+  .mindset-quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--white);
+    line-height: 1.7;
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+    border-top: 2px solid rgba(52, 163, 163, 0.2);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    @media (max-width: 600px) {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+
+    br {
+      display: block;
+      content: '';
+      margin-top: 0.6rem;
+    }
+  }
+}
+
+// Original About Section (keeping it clean)
+.about {
+  margin-top: 13rem;
+  padding: 2rem 6rem;
+  position: relative;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .about-heading {
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 0;
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 3rem;
+        opacity: 1;
+      }
+    }
+
+    .profile-img {
+      flex: 1;
+      margin-right: 2.5rem;
+      z-index: 100;
+      position: relative;
+
+      img {
+        width: 510px;
+        height: auto;
+        object-fit: cover;
+        filter: grayscale(100%);
+        transition: 0.3s;
+
+        &:hover {
+          filter: none;
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .about-content {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 2;
+
+      p {
+        margin-top: 5rem;
+        font-weight: 300;
+        text-align: left;
+        color: var(--white);
+
+        a {
+          font-weight: 700;
+          color: var(--mainColor);
+        }
+      }
+    }
+  }
+}
+
+.about-cta {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 0.95em;
+
+  span {
+    margin-left: 10px;
+  }
+
+  a {
+    font-weight: 800;
+    position: relative;
+    color: var(--green-alt);
+
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0%;
+      background-color: var(--secondColor);
+      transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+  }
+
+  .exp-cta {
+    color: var(--pink);
+    margin-left: 10px;
+  }
+}
